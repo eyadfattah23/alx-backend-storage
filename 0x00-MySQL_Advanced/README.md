@@ -86,3 +86,34 @@ id  name
 8   Thriller
 $
 ```
+
+
+### Tasks:
+
+0. https://dev.mysql.com/doc/refman/5.7/en/create-table.html
+
+3 ->  lists all bands with Glam rock as their main style, ranked by their longevity
+
+Requirements:
+
+* Column names must be: `band_name` and `lifespan` (in years until 2022 - use `2022` instead of `YEAR(CURDATE())`)
+* You should use attributes `formed` and `split` for computing the lifespan
+* Your script can be executed on any database
+
+```bash
+bob@dylan:~$ cat metal_bands.sql | mysql -uroot -p holberton
+Enter password: 
+bob@dylan:~$ 
+bob@dylan:~$ cat 3-glam_rock.sql | mysql -uroot -p holberton 
+Enter password: 
+band_name   lifespan
+Alice Cooper    56
+Mötley Crüe   34
+Marilyn Manson  31
+The 69 Eyes 30
+Hardcore Superstar  23
+```
+
+3. https://www.w3schools.com/sql/func_mysql_cast.asp  -- https://dev.mysql.com/doc/refman/8.4/en/out-of-range-and-overflow.html
+3. https://dev.mysql.com/doc/mysql-tutorial-excerpt/5.7/en/pattern-matching.html 
+3. https://dev.mysql.com/doc/refman/5.7/en/flow-control-functions.html#function_ifnull
