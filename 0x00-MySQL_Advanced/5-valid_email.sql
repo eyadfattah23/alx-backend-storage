@@ -15,4 +15,4 @@ END//
 
 DELIMITER ;
 
-drop TRIGGER reset_valid_email_on_email_update;
+-- drop TRIGGER reset_valid_email_on_email_update;
