@@ -117,3 +117,9 @@ Hardcore Superstar  23
 3. https://www.w3schools.com/sql/func_mysql_cast.asp  -- https://dev.mysql.com/doc/refman/8.4/en/out-of-range-and-overflow.html
 3. https://dev.mysql.com/doc/mysql-tutorial-excerpt/5.7/en/pattern-matching.html 
 3. https://dev.mysql.com/doc/refman/5.7/en/flow-control-functions.html#function_ifnull
+
+
+4. 5. 6. Bro code YOUTUBE channel for triggers, stored procedures, 
+
+
+6. [last_insert_id](https://www.w3schools.com/sql/func_mysql_last_insert_id.asp)
