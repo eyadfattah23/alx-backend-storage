@@ -174,3 +174,5 @@ Hardcore Superstar  23
 10. https://dev.mysql.com/doc/refman/5.7/en/create-procedure.html
 
 10. **DETERMINISTIC**: This clause is required when creating a function to specify whether the function always returns the same result for the same inputs. Since your function is purely mathematical and has no randomness, it's safe to use **`DETERMINISTIC`**.
+
+100. https://www.wikihow.com/Calculate-Weighted-Average
