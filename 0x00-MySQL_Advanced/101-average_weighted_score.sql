@@ -1,3 +1,4 @@
+-- same as 100-.. but for all users
 DELIMITER //
 
 CREATE PROCEDURE ComputeAverageWeightedScoreForUsers ()
