@@ -117,7 +117,7 @@ Hardcore Superstar  23
 3. https://www.w3schools.com/sql/func_mysql_cast.asp  -- https://dev.mysql.com/doc/refman/8.4/en/out-of-range-and-overflow.html
 3. https://dev.mysql.com/doc/mysql-tutorial-excerpt/5.7/en/pattern-matching.html 
 3. https://dev.mysql.com/doc/refman/5.7/en/flow-control-functions.html#function_ifnull
-
+* https://www.w3resource.com/mysql/mysql-procedure.php#MDST
 
 4. 5. 6. Bro code YOUTUBE channel for triggers, stored procedures, 
 
@@ -176,3 +176,6 @@ Hardcore Superstar  23
 10. **DETERMINISTIC**: This clause is required when creating a function to specify whether the function always returns the same result for the same inputs. Since your function is purely mathematical and has no randomness, it's safe to use **`DETERMINISTIC`**.
 
 100. https://www.wikihow.com/Calculate-Weighted-Average
+
+
+11. https://dev.mysql.com/doc/refman/5.7/en/create-view.html
