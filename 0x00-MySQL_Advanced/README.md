@@ -123,3 +123,49 @@ Hardcore Superstar  23
 
 
 6. [last_insert_id](https://www.w3schools.com/sql/func_mysql_last_insert_id.asp)
+
+
+#### 6:
+
+
+6. Add bonus
+
+    Write a SQL script that creates a stored procedure AddBonus that adds a new correction for a student.
+
+    Requirements:
+
+        Procedure AddBonus is taking 3 inputs (in this order):
+            user_id, a users.id value (you can assume user_id is linked to an existing users)
+            project_name, a new or already exists projects - if no projects.name found in the table, you should create it
+            score, the score value for the correction
+
+    Context: Write code in SQL is a nice level up!
+
+1. ##### Part 1: The Subquery (SELECT 1 ...)
+**What does `SELECT 1` do?**
+
+* The `SELECT 1` part is essentially a dummy query. It is used because we don’t really need to retrieve any specific data from the projects table in this case; we just want to check for the existence of a row.
+
+* The number 1 is used here just as a placeholder—it could be any constant value like SELECT 42 or `SELECT 'X'`. The key thing is that MySQL just wants something to return from the subquery, and 1 is commonly used because it's simple.
+
+---
+
+**How does WHERE NOT EXISTS work?**
+
+* WHERE NOT EXISTS (subquery) checks whether the subquery returns any rows.
+* If the subquery returns no rows, the NOT EXISTS condition will be true.
+* If the subquery returns at least one row, the NOT EXISTS condition will be false.
+
+**INSERT INTO projects (name):**
+
+* We are trying to insert a new row into the projects table with a name.
+
+**SELECT project_name:**
+
+* This is what we're trying to insert as the project name. In this case, it's just the value passed into the procedure.
+
+
+7. **Note: use a different parameter name from the attributes names**
+
+
+8. [**"Column Prefix Key Parts"** paragraph](https://dev.mysql.com/doc/refman/5.7/en/create-index.html#create-index-spatial)
