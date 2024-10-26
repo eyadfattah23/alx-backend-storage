@@ -113,3 +113,7 @@ https://stackoverflow.com/questions/60309575/mongodb-service-failed-with-result-
 * [pymongo docs](https://www.mongodb.com/docs/languages/python/pymongo-driver/current/read/retrieve/)
 
 * [insert with pymongo](https://www.w3schools.com/python/python_mongodb_insert.asp)
+
+* [count docs](https://www.mongodb.com/docs/languages/python/pymongo-driver/current/read/count/)
+
+* [task 12 db](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-webstack/411/dump.zip)
