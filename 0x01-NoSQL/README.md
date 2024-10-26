@@ -104,3 +104,5 @@ Durability guarantees that once the transaction completes and changes are writte
 
 
 8. https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
+
+https://stackoverflow.com/questions/60309575/mongodb-service-failed-with-result-exit-code 
