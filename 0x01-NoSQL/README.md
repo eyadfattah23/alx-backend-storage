@@ -121,3 +121,17 @@ https://stackoverflow.com/questions/60309575/mongodb-service-failed-with-result-
 * [$in pymongo](https://www.mongodb.com/docs/manual/reference/operator/query/in/#mongodb-query-op.-in)
 
 * [task 101 first](https://www.mongodb.com/docs/manual/reference/operator/aggregation/first/)
+
+* [counting docs](https://www.youtube.com/watch?v=O5LY7SgZ3Ig&list=PLRAV69dS1uWQ6CZCehxKy0rjkqhQ2Z88t&index=3)
+
+* [dealing with arrays in aggregation](https://youtu.be/5a4qWjLTy9Y?si=plDMxj-fpcnH2WRY)
+
+* https://www.mongodb.com/docs/manual/reference/operator/aggregation/unwind/ 
+
+* [aggregation docs](https://www.mongodb.com/docs/manual/reference/aggregation/)
+
+* [w3schools tutorial](https://www.w3schools.com/python/python_mongodb_getstarted.asp)
+
+* [limit in aggregation](https://www.mongodb.com/docs/manual/reference/operator/aggregation/limit/)
+
+* [snake bnb](https://github.com/mikeckennedy/mongodb-quickstart-course/blob/master/src/snake_bnb/src/services/data_service.py)
