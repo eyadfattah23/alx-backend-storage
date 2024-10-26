@@ -4,19 +4,15 @@ Define function that changes all topics of a school document based on the name
 """
 
 
-def update_topics(mongo_collection,  name, topics):
+def schools_by_topic(mongo_collection, topic):
     """changes all topics of a school document based on the name
 
     Args:
         mongo_collection (pymongo collection object)
-        name (string): school name to update
-        topics (list of strings): list of topics approached in the school
+        topic (string): school name to update
 
     Returns:
         None
     """
 
-    mongo_collection.update_many(
-        {'name': name},
-        {"$set": {"topics": topics}}
-    )
+    return [school for school in mongo_collection.find({"topics": {"$in": [topic]}})]
