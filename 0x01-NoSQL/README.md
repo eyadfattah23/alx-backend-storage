@@ -111,3 +111,5 @@ https://stackoverflow.com/questions/60309575/mongodb-service-failed-with-result-
 ## task resources:
 
 * [pymongo docs](https://www.mongodb.com/docs/languages/python/pymongo-driver/current/read/retrieve/)
+
+* [insert with pymongo](https://www.w3schools.com/python/python_mongodb_insert.asp)
