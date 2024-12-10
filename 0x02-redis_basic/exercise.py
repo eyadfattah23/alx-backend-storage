@@ -15,11 +15,11 @@ class Cache:
         self._redis = redis.Redis()
         self._redis.flushdb()
 
-    def store(self, data: str | bytes | int | float) -> str:
+    def store(self, data: any) -> str:
         """set a new key/value pair in the cache
 
         Args:
-            data (str | bytes | int | float): data to be stored in the cache.
+            data (any): data to be stored in the cache.
 
         Returns:
             str: uuid key of the new data stored in the cache.
