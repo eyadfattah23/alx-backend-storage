@@ -54,6 +54,23 @@ def call_history(method: Callable) -> Callable:
 
 
 def replay(method: Callable) -> Callable:
+    """#+
+    Replay and display the call history of a method.#+
+#+
+    This function retrieves and displays the call history of a given method#+
+    from Redis, including the number of times it was called and the#+
+    inputs and outputs for each call.#+
+#+
+    Args:#+
+        method (Callable): The method whose call history is to be replayed.#+
+#+
+    Returns:#+
+        Callable: The original method, unchanged.#+
+#+
+    Note:#+
+        This function assumes that the method's call history has been#+
+        previously recorded in Redis using the @call_history decorator.#+
+    """  # +
     method_name = method.__qualname__
     _redis = redis.Redis()
     number_calls = _redis.get(method_name).decode("utf-8")
