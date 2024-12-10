@@ -43,11 +43,12 @@ def call_history(method: Callable) -> Callable:
         Callable: The decorated method that logs its calls.#+
     """  # +
     @wraps(method)
-    def wrapper(self, *args):
-        self._redis.rpush("{}:inputs".format(method.__qualname__), str(args))
-        self._redis.rpush("{}:outputs".format(
-            method.__qualname__), method(self, *args))
-        return method(self, *args)
+    def wrapper(self, *args, **kwargs):
+        method_name = method.__qualname__
+        output = method(self, *args, **kwargs)
+        self._redis.rpush("{}:inputs".format(method_name), str(args))
+        self._redis.rpush("{}:outputs".format(method_name), str(output))
+        return output
 
     return wrapper
 
