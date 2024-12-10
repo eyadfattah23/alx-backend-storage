@@ -8,11 +8,47 @@ from functools import wraps
 
 
 def count_calls(method: Callable) -> Callable:
-
+    """#+
+    Decorator function to count the number of times a method is called.#+
+#+
+    this decorator is used to incr. a counter in Redis for each call to method
+    The counter key is the fully qualified name of the method.#+
+#+
+    Args:#+
+        method (Callable): The method to be decorated.#+
+#+
+    Returns:#+
+        Callable: The decorated method.#+
+    """  # +
     @wraps(method)
     def wrapper(self, *args, **kwargs):
         self._redis.incr(method.__qualname__)
         return method(self, *args, **kwargs)
+    return wrapper
+
+
+def call_history(method: Callable) -> Callable:
+    """#+
+    Decorator to record the call history of a method.#+
+#+
+    This decorator logs the inputs and outputs of each method call in Redis.#+
+    It creates two lists in Redis:#+
+    - One for inputs, with key "{method_name}:inputs"#+
+    - One for outputs, with key "{method_name}:outputs"#+
+#+
+    Args:#+
+        method (Callable): The method to be decorated.#+
+#+
+    Returns:#+
+        Callable: The decorated method that logs its calls.#+
+    """  # +
+    @wraps(method)
+    def wrapper(self, *args):
+        self._redis.rpush("{}:inputs".format(method.__qualname__), str(args))
+        self._redis.rpush("{}:outputs".format(
+            method.__qualname__), method(self, *args))
+        return method(self, *args)
+
     return wrapper
 
 
@@ -27,6 +63,7 @@ class Cache:
         self._redis.flushdb()
 
     @count_calls
+    @call_history
     def store(self, data: Union[str, bytes, int, float]) -> str:
         """set a new key/value pair in the cache
 
