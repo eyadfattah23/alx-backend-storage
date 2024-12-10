@@ -34,3 +34,5 @@ used as a database and/or a cache and a message broker.
 * [redis-basics](https://www.youtube.com/watch?v=Hbt56gFj998)
 
 * [redis-python](https://redis-py.readthedocs.io/en/stable/commands.html)
+
+* [wrappers and wraps](https://docs.python.org/3.7/library/functools.html#functools.wraps)

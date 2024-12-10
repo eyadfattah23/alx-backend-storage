@@ -53,6 +53,18 @@ def call_history(method: Callable) -> Callable:
     return wrapper
 
 
+def replay(method: Callable) -> Callable:
+    method_name = method.__qualname__
+    _redis = redis.Redis()
+    number_calls = _redis.get(method_name).decode("utf-8")
+    print("{} was called {} times:".format(method_name, number_calls))
+    inputs = _redis.lrange("{}:inputs".format(method_name), 0, -1)
+    outputs = _redis.lrange("{}:outputs".format(method_name), 0, -1)
+    for i, o in zip(inputs, outputs):
+        print("{}(*{}) -> {}".format(method_name, i.decode("utf-8"),
+                                     o.decode("utf-8")))
+
+
 class Cache:
     """Redis Cache class.
     """
@@ -128,4 +140,12 @@ TEST_CASES = {
 for value, fn in TEST_CASES.items():
     key = cache.store(value)
     assert cache.get(key, fn=fn) == value
+"""
+
+"""
+cache = Cache()
+cache.store("foo")
+cache.store("bar")
+cache.store(42)
+replay(cache.store)
 """
